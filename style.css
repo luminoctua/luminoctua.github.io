@@ -77,6 +77,10 @@ body {
     padding: 2rem;
 }
 
+li {
+  margin-bottom: 10px; /* space after each bullet */
+}
+
 /* Projects Section */
 .projects-section {
     padding: 2rem;
