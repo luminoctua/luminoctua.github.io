@@ -33,7 +33,7 @@ span {
 }
 
 .highlight {
-    color: #6e506b; 
+    color: #6e506b;
 }
 
 /* Normal, unvisited link */
@@ -44,7 +44,7 @@ a {
 
 /* Visited link */
 a:visited {
-   color: #a413e2;
+   color: #e213ae;
 }
 
 /* When the link is hovered */
