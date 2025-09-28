@@ -1,110 +1,284 @@
-body {
-    font-family: 'Times New Roman', Times, serif;
-    margin: 0;
-    padding: 0;
-    background-color: #c7d8d4;
+/* Text Formatting */
+p {
+    color: #FFFFFF;
+    font-size: 14px;
 }
+
+h1 {
+    color: #FFFFFF;
+    font-family: 'CucumberSalad';
+}
+
+h2 {
+    color: #FFFFFF; 
+    font-family: 'CucumberSalad';
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 12px;
+}
+
+ul {
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+li {
+    margin-bottom: 10px; /* space after each bullet */
+}
+
+span {
+    color: #FFFFFF;
+}
+
+.highlight {
+    color: #6e506b; 
+}
+
+/* Normal, unvisited link */
+a {
+    color: #e213ae; /* Change this to any color you like */
+    text-decoration: none; /* Optional: removes underline */
+}
+
+/* Visited link */
+a:visited {
+   color: #5c2557;
+}
+
+/* When the link is hovered */
+a:hover {
+    color: #870e69;
+    text-decoration: underline; /* Optional: show underline on hover */
+}
+
+/* When the link is actively being clicked */
+a:active {
+    color: #b972a8;
+}
+
+/* ============================ Main Page ============================ */
 
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 0 1rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
     .container {
         max-width: 100%; /* remove max-width on mobile */
         padding: 0 1rem; /* optional: add horizontal padding for breathing room */
     }
 }
 
-/* Top Intro Section */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'EllisDigitalCoding';
+    
+    background-color: #000000;
+    /* background-image: 
+        repeating-linear-gradient(
+            45deg,       
+            #ff00807a 0px,
+            #ff00807a 1.5px,
+            transparent 1px,
+            transparent 100px
+        ),
+        repeating-linear-gradient(
+            -45deg,      
+            #ff00807a 0px,
+            #ff00807a 1.5px,
+            transparent 1px,
+            transparent 100px
+        ); */
+}
+
+.about-page {
+    min-height: 100vh; /* makes the page fill the screen at least */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers the box vertically */
+    align-items: center; /* centers the box horizontally */
+    background-color: black;
+}
+
+/* ============================ Top Intro Section ============================ */
 .intro-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-    gap: 1rem;
-    background-color: #e1eae8;
-    text-align: center;
-}
-
-.intro-section.small {
     flex-direction: column;
-    align-items: flex-start;
+    padding: 3rem;
+    gap: 1rem;
+    border-top: 1px solid #ffffff85;
+    border-bottom: 1px solid #ffffff85;
+    position: relative;
+    z-index: 1;
+    /* border: 1px solid blue; */
 }
 
-.intro-text p {
-    text-align: left;
+/* --- Decorative Elements --- */
+.image-border {
+    position: relative;
+    padding: 8px;
+    display: inline-block;     /* shrink-wrap to image */
+    border: 1px solid white;
+    z-index: 6;
+    flex: 0 0 auto;
 }
 
-.contact-links a {
-    text-decoration: none;
-    color: blue;
+.decor-container {
+    width: 250px;   /* match rectangle width */
+    height: 70px;  /* match rectangle height */
+    position: relative;
+    overflow: visible;     /* allow triangle to stick out */
 }
 
-.contact-links a:not(:last-child)::after {
-    content: "/";
-    margin: 0 0.3rem;
-    margin-left: 0.6rem;
+.rectangle {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1;            /* rectangle below triangle */
 }
 
+/* Decorative right triangle */
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 250px solid transparent;   /* vertical size of triangle */
+    border-left: 250px solid #a8a8a8;        /* horizontal size and color */
+    margin-top: -240px;                   /* optional: slightly overlap border */
+    margin-left: -22px;                   /* offset to the left */
+    z-index: 5;
+    /* border-right: optional for flipped triangle */
+}
+
+/* -------------- Intro Body -------------- */
+.intro-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid blue; */
+}
+
+/* --- Profile Photo --- */
 .profile-photo {
-    flex-shrink: 0;    
-    width: 250px;
+    width: 200px;
     height: 250px;
-    border-radius: 50%;
     overflow: hidden;
+    position: relative;
+    display: block;
+    z-index: 6;           /* keep image above triangle */
 }
 
 .profile-photo img {
     width: 100%;
-    height: 100%;
-    max-width: 250px;
+    height: auto;
+    max-width: 200px;
     max-height: 250px;
+    transform: scale(1.5); /* Zoom in */
+    transform-origin: center; /* Keep zoom centered */
     object-fit: cover;
-    display: block; 
 }
+
+/* --- Text Content --- */
+.intro-text {
+    position: relative;
+    padding: 1rem;
+    padding-left: 2rem;
+    background-color: black;
+    z-index: 4;
+    /* border: 1px solid blue; */
+}
+
+.intro-text h1 {
+    margin: 0;
+    font-family: 'CucumberSalad';
+    font-size: 32px;
+    text-align: left;
+    /* border: 1px solid blue; */
+}
+
+.intro-text p {
+    text-align: left;
+    font-size: 14px;
+    /* border: 1px solid blue; */
+}
+
+.contact-links {
+    text-align: center;
+    display: flex;
+    align-content: center;
+    gap: 1rem;
+    /* border: 1px solid blue; */
+}
+
+.contact-links span {
+    font-size: 16px;
+    /* border: 1px solid blue; */
+}
+
+.contact-links a {
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;   /* makes <a> act like a box */
+    line-height: 1;          /* removes extra vertical line-box space */
+    padding: 0;              /* ensure no padding inflates it */
+    margin: 0;
+    align-content: center;
+
+    /* border: 1px solid blue; */
+}
+
+/* .contact-links a:not(:last-child)::after {
+    content: "/";
+    margin: 0 0.3rem;
+    margin-left: 0.6rem;
+} */
+
+/* ============================ Body Contents ============================ */
 
 /* Bottom Half Contents */
 .contents-section {
-    background-color: #e1eae8;
+    background-color: #000000;
+    /* border: 1px solid blue; */
 }
 
-/* Research Section */
-.research-section {
-    padding: 2rem;
-}
-
-li {
-  margin-bottom: 10px; /* space after each bullet */
-}
-
-/* Projects Section */
-.projects-section {
-    padding: 2rem;
-}
-
-.project-card {
+/* ============================ Research Section ============================ */
+.research-page {
+    min-height: 100vh; /* makes the page fill the screen at least */
     display: flex;
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 1rem;
+    flex-direction: column;
+    justify-content: center; /* centers the box vertically */
+    align-items: center; /* centers the box horizontally */
+    background-color: black;
 }
 
-.project-card img {
-    max-width: 150px;
-    margin-right: 1rem;
+.research-section {
+    position: relative;
+    padding: 2rem;
+    border-top: 1px solid #ffffff85;
+    border-bottom: 1px solid #ffffff85;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    /* border: 1px solid blue; */
 }
 
-.project-info h3 {
-    margin-top: 0;
-}
-
-.authors {
-    font-style: italic;
-    color: #555;
+.research-text {
+    position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: black;
+    z-index: 4;
+    /* border: 1px solid blue; */
 }
 
 /* Research Detail */
@@ -116,3 +290,391 @@ li {
     max-width: 100%;
     margin-bottom: 1rem;
 }
+
+/* ============================ Projects Section ============================ */
+.projects-page {
+    min-height: 100vh; /* makes the page fill the screen at least */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers the box vertically */
+    align-items: center; /* centers the box horizontally */
+    background-color: black;
+}
+
+.projects-section {
+    position: relative;
+    padding: 0rem;
+    border-top: 1px solid #ffffff85;
+    border-bottom: 1px solid #ffffff85;
+    /* border: 1px solid blue; */
+}
+
+.project-header {
+    padding: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+    justify-content: vertical;
+    /* border: 1px solid blue; */
+}
+
+.project-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    gap: 1.8rem;
+    /* border: 1px solid blue; */
+}
+
+.project-card {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: top;
+    /* border: 1px solid blue; */
+}
+
+.project-image {
+    display: block;
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    z-index: 6;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    max-height: 100px;
+    margin-right: 1rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.project-info {
+    position: relative;
+    max-width: 100%;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 1rem;
+    padding-right: 0rem;
+    flex: 1; /* <-- make it grow to fill remaining space */
+    display: flex; /* optional: helps internal layout stretch properly */
+    flex-direction: column;
+    /* border: 1px solid blue; */
+}
+
+/* .project-card-header {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    padding: 1rem;
+    padding-top: 0.2rem;
+    max-width: 100%;
+} */
+
+.project-card-base {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    gap: 0.3rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    z-index: 6;
+    flex: 1;
+
+    /* Linear gradient background */
+    background: linear-gradient(to right, 
+        #ffffff00, 
+        #ffffff13 10%, 
+        #ffffff21 50%, 
+        #ffffff35 90%, 
+        #ffffff40 100%
+    );
+    padding: 1rem;
+
+    /* border: 1px solid blue; */
+}
+
+.project-card-outline {
+    position: relative;
+    height: 100%;
+    display: flex;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-image: linear-gradient(to right, #00000000 5%, #ffffff85 60%) 1;
+    background-color: black;
+    z-index: 6;
+}
+
+.title {
+    font-size: 16px;
+    /* border: 1px solid blue; */
+}
+
+.authors {
+    font-style: italic;
+    font-size: 14px;
+    color: #858585;
+    /* border: 1px solid blue; */
+}
+
+.description {
+    color: white;
+    font-size: 14px;
+    /* border: 1px solid blue; */
+}
+
+.project-body .triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 132px solid black;   /* vertical size of triangle */
+    border-left: 132px solid transparent;        /* horizontal size and color */
+    margin-top: -7px;                   /* optional: slightly overlap border */
+    margin-left: 62px;                   /* offset to the left */
+    z-index: 5;
+}
+
+.project-body .rectangle {
+    position: absolute;
+    width: 212px;
+    height: 132px;
+    margin-top: -7px;
+    margin-left: -18px;
+    background-color: #a8a8a8;
+    z-index: 4;            /* rectangle below triangle */
+}
+
+/* ============================ Navigation Bar ============================ */
+.navigation-bar {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    gap: 0.5rem;
+    padding-top: 1rem;
+    margin-left: -0.5rem;
+    margin-bottom: -0.5rem;
+    /* border: 1px solid blue; */
+}
+
+.navigation-bar button {
+    display: flex;
+    align-content: center;
+    position: relative;
+    background-color: white;
+    padding: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 0px;
+}
+
+/* .navigation-bar .triangle-left {
+    position: absolute;
+    top: 0;
+    left: 0;     
+    height: 100%;
+    aspect-ratio: 0.6 / 1;
+    display: block;
+    z-index: 5;
+}
+
+.navigation-bar .triangle-left::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;
+    border-left: 100% solid red;    
+    margin-bottom: 0px;                  
+    margin-left: 0px;     
+    top: 0;
+    left: 0;              
+     
+} */
+
+.navigation-bar .triangle-left {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;   
+    border-left: 30px solid black;
+    margin-bottom: -2px;                  
+    margin-left: -1px;     
+    top: 0;
+    left: 0;              
+    z-index: 5;
+}
+
+.navigation-bar .triangle-right {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-right: 30px solid black;
+    margin-top: -2px;                 
+    margin-right: -1px;  
+    top: 0; 
+    right: 0;          
+    z-index: 5;
+}
+
+/* .navigation-bar .triangle-right  {
+  position: absolute;
+  bottom: 0;      
+  right: 0; 
+  height: 100%;             
+  aspect-ratio: 1 / 1; 
+  background-color: rgb(174, 53, 53);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0);
+} */
+
+.navigation-bar h2 {
+    color: black;
+    font-size: 20px;
+    padding-top: 3px;
+    margin: 0px;
+    /* border: 1px solid blue; */
+}
+
+/* ============================ General Decorations ============================ */
+
+.vertical-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 63%; /* <-- adjust this to shift right from center */
+  width: 1px; /* thickness of the line */
+  background-color: #ffffff85; /* slightly transparent line */
+  z-index: 3; /* stays behind header-box */
+}
+
+/* -------------- Headers -------------- */
+
+.header {
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    /* border: 1px solid blue; */
+}
+
+.header h1 {
+    margin: 0; 
+    margin-top: 15px;
+    font-size: 50px;
+    font-family: 'CucumberSalad';
+}
+
+.header .triangle {
+    position: absolute;    /* taken out of normal flow */
+    bottom: 0;             /* align with bottom of rectangle */
+    left: 0;               /* align with left edge */
+    width: 0;
+    height: 0;
+    border-top: 70px solid transparent;
+    border-left: 70px solid #000000;  /* visible triangle */
+    margin-top: -70px;                   /* optional: slightly overlap border */
+    margin-left: 0px;                   /* offset to the left */
+    z-index: 2;            /* triangle above rectangle */
+}
+
+/* ============================ Fonts ============================ */
+@font-face {
+    font-family: 'EllisDigitalCoding';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'EllisDigitalCoding';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PyeongchangPeace';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PyeongchangPeace';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FounderYooGeonWook';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GiantsInline';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Inline.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CucumberSalad';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_cucumbersalad.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IntelOneMono';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-light.woff2') format('woff2');
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IntelOneMono';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IntelOneMono';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-medium.woff2') format('woff2');
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IntelOneMono';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/intelone-mono-font-family-bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+}
+
+/* @font-face {
+    font-family: 'Florence';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_Firenze.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'HyeoniGothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/EF_hyunygothic.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+} */

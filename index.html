@@ -7,62 +7,107 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="container">
-    <!-- Top Section -->
-    <header class="intro-section">
-        <div class="intro-text">
-            <h1>Jin Lee</h1>
-            <p>I am a master's student in the Advanced Computing program at Yonsei University. I am currently working as an intern at <a href="https://youngwoon.github.io/" target="_blank">RLLAB</a>, advised by professor Youngwoon Lee. I aim to develop models that can be used to train robots for real-world deployment, and would love to see a future where robotics can be applied to support disadvantaged populations.</p>
-            <div class="contact-links">
-                <a href="cv.pdf" target="_blank">CV</a>
-                <a href="mailto:luminoctua@gmail.com">Email</a>
-                <a href="https://github.com/luminoctua" target="_blank">GitHub</a>
-            </div>
-        </div>
-        <div class="profile-photo">
-            <img src="images/profile.JPG" alt="Profile photo">
-        </div>
-    </header>
+    <div class="about-page">
+        <!-- Top Section -->
+        <header class="intro-section">
 
-    <main class="contents-section">
-        <!-- Research Interests -->
-        <main class="research-section">
-            <h2>Research</h2>
-
-            <p>My current focus is to develop better robot learning methods for contact-rich manipulation tasks. I am in the process of developing potential approaches to the problem:</p>
-            <!-- Bullet Pointed List-->
-            <ul>
-                <li>Developing a more advanced world model using multimodal sensory data to improve dynamics predictions and sample efficiency in robotic learning.</li>
-                <li>Developing methods to fuse multimodal inputs in a way that preserves information while structuring latent representations to facilitate efficient training and downstream learning.</li>
-            </ul>
-        </main>
-
-        <!-- Projects -->
-        <main class="projects-section">
-            <h2>Projects</h2>
-
-            <p></p>
-
-            <div class="project-card">
-                <img src="images/project1.jpg" alt="Project 1">
-                <div class="project-info">
-                    <h3><a href="project1.html">TBD</a></h3>
-                    <p class="authors">...</p>
-                    <p class="description">...</p>
+            <div class="vertical-line"></div>
+            
+            <!-- The section "title" and some decor -->
+            <div class="header">
+                <h1>// &nbsp;ABOUT:</h1>
+                <!-- Decor-->
+                <div class="decor-container">
+                    <div class="triangle"></div>
+                    <div class="rectangle"></div>
                 </div>
             </div>
-<!-- 
-            <div class="project-card">
-                <img src="images/research2.jpg" alt="Research 2">
-                <div class="project-info">
-                    <h3><a href="research2.html">Research Title 2</a></h3>
-                    <p class="authors">Author 1, Author 2</p>
-                    <p class="description">Short description of the research project.</p>
+
+            <div class="intro-body">
+                <!-- The profile image + border -->
+                <div class="profile-group">
+                    <div class="image-border">
+                        <div class="profile-photo">
+                            <img src="images/profile.JPG" alt="Profile photo">
+                        </div>
+                    </div>  
+                    <div class="triangle"></div>
+                </div> 
+                <!-- The text information -->
+                <div class="intro-text">
+                    <h1>JIN LEE</h1>
+                    <p>I am a master's student in the Advanced Computing program 
+                        at Yonsei University. I am currently working as an intern at
+                        <a href="https://youngwoon.github.io/" target="_blank">RLLAB</a>,
+                        advised by professor Youngwoon Lee. I aim to develop models that 
+                        can be used to train robots for real-world deployment, and would 
+                        love to see a future where robotics can be applied to support 
+                        disadvantaged populations.</p>
+                    <div class="contact-links">
+                        <a href="cv.pdf" target="_blank">CV</a>
+                        <span>/</span>
+                        <a href="mailto:luminoctua@gmail.com">Email</a>
+                        <span>/</span>
+                        <a href="https://github.com/luminoctua" target="_blank">GitHub</a>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Uncomment when relevant -->
+            <!-- <div class="navigation-bar">
+                <button class="research-button">
+                    <div class="triangle-left"></div>
+                    <div class="triangle-right"></div>
+                    <h2>RESEARCH</h2>
+                </button>
+                <button class="projects-button">
+                    <div class="triangle-left"></div>
+                    <div class="triangle-right"></div>
+                    <h2>PROJECTS</h2>
+                </button>
             </div> -->
 
-            <!-- Add more project cards as needed -->
+        </header>
+    </div>
+
+    <main class="research-page">
+        <!-- Research Interests -->
+        <main class="research-section">
+
+            <div class="vertical-line"></div>
+
+            <!-- The section "title" and some decor -->
+            <div class="header">
+                <h1>// &nbsp;RESEARCH:</h1>
+                <!-- Decor-->
+                <div class="decor-container">
+                    <div class="triangle"></div>
+                    <div class="rectangle"></div>
+                </div>
+            </div>
+            <div class="research-text">
+                <p>My current research interest is in multitask learning methods that 
+                    could be implemented for long-horizon tasks in RL. I am currently 
+                    working on improving a method that uses a Mixture of Experts that 
+                    allows one high-level policy to maintain high performance with 
+                    several tasks. Some research questions I'd like to explore with 
+                    this topic include:</p>
+                <!-- Bullet Pointed List-->
+                <ul>
+                    <li>Does MTRL improve performance in long-horizon tasks via 
+                        dividing the tasks into sub-tasks? Has research shown this 
+                        method to be promising so far?</li>
+                    <li>How important is using skill-discovery for defining sub-tasks 
+                        in long-horizon tasks?</li>
+                </ul>
+                <p>In the future, I may potentially also branch into skill-discovery 
+                    or curriculum learning while exploring methods for agents to 
+                    perform well in long-horizon tasks.</p>
+            </div>
         </main>
     </main>
+
+    <!-- Add temp.html code here once relevant-->
 
     <script src="script.js"></script>
 </body>
